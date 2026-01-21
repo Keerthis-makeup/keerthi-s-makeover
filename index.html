@@ -1,0 +1,1774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keerthi's Makeover - Professional Makeup Artist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Sophisticated Professional Color Scheme */
+        :root {
+            --primary: #9a7b4f; /* Warm taupe */
+            --secondary: #6d4c41; /* Rich brown */
+            --accent: #c0a080; /* Soft beige */
+            --light: #f9f7f5; /* Warm off-white */
+            --dark: #2a2a2a; /* Dark gray */
+            --text: #555555; /* Medium gray */
+            
+            /* Dark mode variables */
+            --dark-bg: #1a1a1a;
+            --dark-text: #e0e0e0;
+            --dark-card: #252525;
+            --dark-border: #444;
+        }
+
+        /* Dark mode styles */
+        body.dark-mode {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+        }
+        
+        body.dark-mode h1,
+        body.dark-mode h2,
+        body.dark-mode h3,
+        body.dark-mode h4 {
+            color: var(--light);
+        }
+        
+        body.dark-mode header {
+            background-color: var(--dark-card);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        body.dark-mode nav ul li a {
+            color: var(--light);
+        }
+        
+        body.dark-mode .about,
+        body.dark-mode .gallery,
+        body.dark-mode .booking {
+            background-color: var(--dark-card);
+        }
+        
+        body.dark-mode .services,
+        body.dark-mode .beauty-tips,
+        body.dark-mode .contact {
+            background-color: var(--dark-bg);
+        }
+        
+        body.dark-mode .service-card,
+        body.dark-mode .tip-card,
+        body.dark-mode .booking-form,
+        body.dark-mode .booking-conditions {
+            background-color: var(--dark-card);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        body.dark-mode .form-group input,
+        body.dark-mode .form-group textarea,
+        body.dark-mode .form-group select {
+            background-color: #333;
+            border-color: #444;
+            color: var(--light);
+        }
+        
+        body.dark-mode footer {
+            background: #141414;
+        }
+        
+        body.dark-mode .copyright {
+            border-top: 1px solid #333;
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+            overflow: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--dark);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .btn:hover:after {
+            transform: translateX(100%);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--primary);
+            margin: 20px auto;
+            transition: all 0.6s ease;
+        }
+
+        .section-title:hover:after {
+            width: 120px;
+            background: var(--secondary);
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: all 0.4s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--dark);
+            z-index: 1001;
+            transition: all 0.4s ease;
+        }
+
+        .mobile-menu-btn:hover {
+            color: var(--primary);
+            transform: rotate(90deg);
+        }
+        
+        /* Theme Toggle */
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--dark);
+            font-size: 1.3rem;
+            cursor: pointer;
+            margin-left: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-toggle:hover {
+            color: var(--primary);
+            transform: rotate(15deg);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url(images/4.jpg);
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.9);
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .hero .btn {
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+
+        /* About Section */
+        .about {
+            background-color: white;
+            position: relative;
+        }
+
+        .about:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%239a7b4f" opacity="0.05"><path d="M30,10 Q50,5 70,10 T90,30 Q95,50 90,70 T70,90 Q50,95 30,90 T10,70 Q5,50 10,30 T30,10"></path></svg>');
+            background-size: contain;
+            z-index: 0;
+            opacity: 0;
+            transition: all 1s ease;
+        }
+
+        .about:hover:after {
+            opacity: 1;
+            transform: rotate(10deg);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-img {
+            flex: 1;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transform: perspective(1000px) rotateY(-10deg);
+            transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+            animation: fadeInLeft 1s ease-out both;
+        }
+
+        .about-img:hover {
+            transform: perspective(1000px) rotateY(0deg) scale(1.03);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .about-img:hover img {
+            transform: scale(1.1);
+        }
+
+        .about-text {
+            flex: 1;
+            animation: fadeInRight 1s ease-out both;
+        }
+
+        .about-text h3 {
+            color: var(--secondary);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .about-text h3:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            bottom: 0;
+            left: 0;
+            transition: all 0.6s ease;
+        }
+
+        .about-text:hover h3:after {
+            width: 100px;
+            background: var(--secondary);
+        }
+
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-top: 20px;
+            display: inline-block;
+            transition: all 0.4s ease;
+        }
+
+        .signature:hover {
+            transform: translateX(10px);
+            color: var(--secondary);
+        }
+
+        /* Services Section */
+        .services {
+            background-color: var(--light);
+            position: relative;
+        }
+
+        .services:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%239a7b4f" opacity="0.03"><circle cx="50" cy="50" r="40"></circle></svg>');
+            background-size: 300px;
+            z-index: 0;
+            animation: bgMove 60s linear infinite;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+            transform: translateY(50px);
+            opacity: 0;
+        }
+
+        .service-card.animated {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-img {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .service-content h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover .service-content h3 {
+            color: var(--primary);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: inline-block;
+            transition: all 0.6s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: rotateY(360deg);
+            color: var(--secondary);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background-color: white;
+            position: relative;
+        }
+
+        .gallery:after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%239a7b4f" opacity="0.05"><path d="M20,20 L80,20 L80,80 L20,80 Z"></path></svg>');
+            background-size: contain;
+            z-index: 0;
+            animation: rotate 30s linear infinite;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 300px;
+            transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+            transform: scale(0.95);
+            opacity: 0;
+        }
+
+        .gallery-item.animated {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(154, 123, 79, 0.8);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay h4 {
+            color: white;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+            transform: translateY(20px);
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-overlay p {
+            color: rgba(255, 255, 255, 0.9);
+            transform: translateY(20px);
+            transition: transform 0.4s ease 0.1s;
+        }
+
+        .gallery-item:hover .gallery-overlay h4,
+        .gallery-item:hover .gallery-overlay p {
+            transform: translateY(0);
+        }
+
+        /* Beauty Tips Section */
+        .beauty-tips {
+            background-color: var(--light);
+            position: relative;
+        }
+
+        .beauty-tips:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%239a7b4f" opacity="0.03"><path d="M30,10 Q50,5 70,10 T90,30 Q95,50 90,70 T70,90 Q50,95 30,90 T10,70 Q5,50 10,30 T30,10"></path></svg>');
+            background-size: 200px;
+            z-index: 0;
+            animation: bgMoveReverse 60s linear infinite;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tip-card {
+            background: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+            text-align: center;
+            transform: translateY(50px);
+            opacity: 0;
+        }
+
+        .tip-card.animated {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .tip-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: inline-block;
+            transition: all 0.6s ease;
+        }
+
+        .tip-card:hover .tip-icon {
+            transform: translateY(-5px) scale(1.1);
+            color: var(--secondary);
+        }
+
+        .tip-card h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            transition: all 0.4s ease;
+        }
+
+        .tip-card:hover h3 {
+            color: var(--primary);
+        }
+
+        /* Booking Section */
+        .booking {
+            background-color: white;
+            position: relative;
+        }
+
+        .booking:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%239a7b4f" opacity="0.03"><path d="M20,50 Q35,20 50,50 T80,50"></path></svg>');
+            background-size: 200px;
+            z-index: 0;
+            animation: bgMove 40s linear infinite;
+        }
+
+        .booking-content {
+            display: flex;
+            gap: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .booking-text {
+            flex: 1;
+            animation: fadeInLeft 1s ease-out both;
+        }
+
+        .booking-text h3 {
+            color: var(--secondary);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            position: relative;
+        }
+
+        .booking-text h3:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            bottom: 0;
+            left: 0;
+            transition: all 0.6s ease;
+        }
+
+        .booking-text:hover h3:after {
+            width: 100px;
+            background: var(--secondary);
+        }
+
+        .booking-conditions {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 5px;
+            margin-top: 30px;
+            transition: all 0.6s ease;
+        }
+
+        .booking-conditions:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .booking-conditions h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .booking-conditions ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .booking-conditions li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+            transition: all 0.4s ease;
+        }
+
+        .booking-conditions li:hover {
+            transform: translateX(5px);
+        }
+
+        .booking-conditions li:before {
+            content: '•';
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .booking-form {
+            flex: 1;
+            background: var(--light);
+            padding: 40px;
+            border-radius: 5px;
+            animation: fadeInRight 1s ease-out both;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--secondary);
+            transition: all 0.4s ease;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 3px;
+            font-size: 1rem;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(154, 123, 79, 0.2);
+        }
+
+        .form-group input:focus + label,
+        .form-group textarea:focus + label,
+        .form-group select:focus + label {
+            color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--light);
+            position: relative;
+        }
+
+        .contact:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%239a7b4f" opacity="0.03"><path d="M20,20 L80,20 L80,80 L20,80 Z"></path></svg>');
+            background-size: 200px;
+            z-index: 0;
+            animation: bgMoveReverse 40s linear infinite;
+        }
+
+        .contact-content {
+            display: flex;
+            gap: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info {
+            flex: 1;
+            animation: fadeInLeft 1s ease-out both;
+        }
+
+        .contact-info h3 {
+            color: var(--secondary);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            position: relative;
+        }
+
+        .contact-info h3:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            bottom: 0;
+            left: 0;
+            transition: all 0.6s ease;
+        }
+
+        .contact-info:hover h3:after {
+            width: 100px;
+            background: var(--secondary);
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-details p {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            transition: all 0.4s ease;
+        }
+
+        .contact-details p:hover {
+            transform: translateX(5px);
+        }
+
+        .contact-details i {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            transition: all 0.4s ease;
+        }
+
+        .contact-details p:hover i {
+            background: var(--secondary);
+            transform: rotate(15deg);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-5px) rotate(10deg);
+        }
+
+        .contact-map {
+            flex: 1;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 400px;
+            animation: fadeInRight 1s ease-out both;
+        }
+
+        .contact-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            transition: all 0.6s ease;
+        }
+
+        .contact-map:hover iframe {
+            transform: scale(1.02);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+            position: relative;
+        }
+
+        footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%239a7b4f" opacity="0.05"><path d="M20,20 L80,20 L80,80 L20,80 Z"></path></svg>');
+            background-size: 200px;
+            z-index: 0;
+            animation: bgMove 50s linear infinite;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-column h3 {
+            color: var(--primary);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background: var(--primary);
+            bottom: 0;
+            left: 0;
+            transition: all 0.6s ease;
+        }
+
+        .footer-column:hover h3:after {
+            width: 80px;
+            background: var(--accent);
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 15px;
+            transition: all 0.4s ease;
+        }
+
+        .footer-links ul li:hover {
+            transform: translateX(5px);
+        }
+
+        .footer-links ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.4s ease;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.7);
+            transition: all 0.4s ease;
+        }
+
+        .footer-contact p:hover {
+            transform: translateX(5px);
+        }
+
+        .footer-contact i {
+            margin-right: 15px;
+            color: var(--primary);
+            transition: all 0.4s ease;
+        }
+
+        .footer-contact p:hover i {
+            color: var(--accent);
+            transform: rotate(15deg);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from { 
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from { 
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes bgMove {
+            from { background-position: 0 0; }
+            to { background-position: 1000px 1000px; }
+        }
+
+        @keyframes bgMoveReverse {
+            from { background-position: 1000px 1000px; }
+            to { background-position: 0 0; }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .about-content,
+            .booking-content,
+            .contact-content {
+                flex-direction: column;
+            }
+            
+            .about-img {
+                margin-bottom: 40px;
+            }
+            
+            .contact-map {
+                margin-top: 40px;
+            }
+            
+            section {
+                padding: 80px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 80px);
+                background: white;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+            }
+            
+            body.dark-mode nav {
+                background: var(--dark-card);
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+            }
+            
+            .booking-form,
+            .booking-conditions {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <a href="#" class="logo">Keerthi's<span>Makeover</span></a>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#booking">Booking</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li>
+                            <button class="theme-toggle" id="themeToggle">
+                                <i class="fas fa-moon"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Professional Makeup Artistry</h1>
+                <p>Enhancing your natural beauty with expert techniques and premium products for weddings, special occasions, and everyday glamour.</p>
+                <a href="#booking" class="btn">Book Appointment</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Keerthi</h2>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="images/8.jpg" alt="Keerthi Makeup Artist">
+                </div>
+                <div class="about-text">
+                    <h3>Your Personal Beauty Expert</h3>
+                    <p>With over 3 years of experience in the beauty industry, I specialize in creating customized looks that enhance your natural features while reflecting your personal style.</p>
+                    <p>My approach combines technical expertise with an artistic eye, ensuring you look and feel your absolute best for any occasion. I use only high-quality, professional products that are kind to your skin while delivering flawless, long-lasting results.</p>
+                    <p>Whether you're preparing for your wedding day, a special event, or simply want to treat yourself, I'm dedicated to making your beauty experience exceptional.</p>
+                    <p class="signature">Keerthi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="images/4.jpg" alt="HD Bridal Makeup">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>HD Bridal Makeup</h3>
+                        <p>Flawless, camera-ready makeup that looks stunning in person and photographs beautifully throughout your special day.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Party Makeup">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-glass-cheers"></i>
+                        </div>
+                        <h3>Party Makeup</h3>
+                        <p>Glamorous looks ranging from subtle elegance to bold statements, customized for your event and personal style.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="images/12.jpg" alt="Hairstyles">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-cut"></i>
+                        </div>
+                        <h3>Hairstyling</h3>
+                        <p>Professional hairstyling to complement your makeup, from elegant updos to flowing curls and braids.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="images/13.jpg" alt="Bridal Flowers">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <h3>Bridal Flowers</h3>
+                        <p>Exquisite floral arrangements for your bridal hairstyle, including fresh flower crowns and delicate accents.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="images/11.jpg" alt="Saree Draping">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <h3>Saree Draping</h3>
+                        <p>Professional saree draping with perfect pleats and elegant pallu arrangements for any occasion.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="images/10.jpg" alt="Lash Extensions">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Lash Extensions</h3>
+                        <p>Premium eyelash extensions to enhance your natural lashes with added length, volume and curl.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Our Portfolio</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/2.jpg" alt="Bridal Makeup">
+                    <div class="gallery-overlay">
+                        
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/3.jpg" alt="Party Makeup">
+                    <div class="gallery-overlay">
+                        
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/5.jpg" alt="Hairstyle">
+                    <div class="gallery-overlay">
+                        
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/7.jpg" alt="HD Makeup">
+                    <div class="gallery-overlay">
+                        
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/14.jpg" alt="Henna Design">
+                    <div class="gallery-overlay">
+                        
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/4.jpg" alt="Nail Art">
+                    <div class="gallery-overlay">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beauty Tips Section -->
+    <section class="beauty-tips">
+        <div class="container">
+            <h2 class="section-title">Beauty Tips & Advice</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Pre-Wedding Skincare</h3>
+                    <p>Begin your skincare regimen at least 3 months before your wedding. Focus on hydration, regular facials, and sun protection for the perfect canvas.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Choosing Your Look</h3>
+                    <p>Bring inspiration photos to your trial session. Consider your outfit colors, jewelry, and venue when selecting your makeup style.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Makeup Longevity</h3>
+                    <p>For makeup that lasts, avoid touching your face and use blotting papers instead of powder. Setting spray is essential for all-day wear.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking" id="booking">
+        <div class="container">
+            <h2 class="section-title">Book Your Appointment</h2>
+            <div class="booking-content">
+                <div class="booking-text">
+                    <h3>Ready to Begin?</h3>
+                    <p>To schedule your makeup appointment, please complete the booking form. I'll respond within 24 hours to confirm your session and discuss details.</p>
+                    <p>For weddings and major events, I recommend booking 3-6 months in advance to secure your preferred date.</p>
+                    
+                    <div class="booking-conditions">
+                        <h4>Booking Policy</h4>
+                        <ul>
+                            <li>25% of total amount required in advance to confirm booking (non-refundable)</li>
+                            <li>Remaining balance due immediately after makeup service</li>
+                            <li>Travel fees based on your location</li>
+                            <li>All bookings subject to availability</li>
+                            <li>Please arrive with clean, moisturized skin</li>
+                            <li>For trials, bring inspiration photos and accessories</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="booking-form">
+                    <form id="appointmentForm" action="kavinvenom@gmail.com" method="post" enctype="text/plain">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Required</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select Service</option>
+                                <option value="HD Bridal Makeup">HD Bridal Makeup</option>
+                                <option value="Party Makeup">Party Makeup</option>
+                                <option value="Hairstyling">Hairstyling</option>
+                                <option value="Bridal Flowers">Bridal Flowers</option>
+                                <option value="Saree Draping">Saree Draping</option>
+                                <option value="Lash Extensions">Lash Extensions</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="date">Preferred Date</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="location">Location (Full Address)</label>
+                            <input type="text" id="location" name="location" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Special Requests</label>
+                            <textarea id="message" name="message" rows="4"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Submit Booking Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-details">
+                        <p><i class="fas fa-map-marker-alt"></i> Subramani St, Ganpat Raj Nagar, Elango Nagar, Virugambakkam, Chennai-600092</p>
+                        <p><i class="fas fa-phone"></i> +91 8072624414</p>
+                        <p><i class="fas fa-envelope"></i> keerthi@makeover.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 7:00 PM</p>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-map">
+                    <iframe src="https://maps.app.goo.gl/RsKeyTk8i3tJxB3p6" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column footer-about">
+                    <h3>Keerthi's Makeover</h3>
+                    <p>Professional makeup artistry specializing in bridal, special occasion, and editorial makeup services.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#booking">Booking</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column footer-links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Bridal Makeup</a></li>
+                        <li><a href="#">Party Makeup</a></li>
+                        <li><a href="#">Hairstyling</a></li>
+                        <li><a href="#">Bridal Flowers</a></li>
+                        <li><a href="#">Saree Draping</a></li>
+                        <li><a href="#">Lash Extensions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column footer-contact">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Subramani St, Ganpat Raj Nagar, Elango Nagar, Virugambakkam, Chennai-600092</p>
+                    <p><i class="fas fa-phone"></i> +91 8072624414</p>
+                    <p><i class="fas fa-envelope"></i> keerthi@makeover.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 7:00 PM</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Keerthi's Makeover. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('nav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = nav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Sticky header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                header.style.padding = '15px 0';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+                header.style.padding = '20px 0';
+            }
+        });
+        
+        // Form submission
+        const form = document.getElementById('appointmentForm');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would typically send the form data to a server
+            // For this example, we'll just show an alert
+            alert('Thank you for your booking request! We will contact you shortly to confirm your appointment and discuss the 25% advance payment.');
+            form.reset();
+        });
+        
+        // Animation on scroll
+        function animateOnScroll() {
+            const serviceCards = document.querySelectorAll('.service-card');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const tipCards = document.querySelectorAll('.tip-card');
+            
+            serviceCards.forEach((card, index) => {
+                const cardPosition = card.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (cardPosition < screenPosition) {
+                    setTimeout(() => {
+                        card.classList.add('animated');
+                    }, index * 150);
+                }
+            });
+            
+            galleryItems.forEach((item, index) => {
+                const itemPosition = item.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (itemPosition < screenPosition) {
+                    setTimeout(() => {
+                        item.classList.add('animated');
+                    }, index * 150);
+                }
+            });
+            
+            tipCards.forEach((card, index) => {
+                const cardPosition = card.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (cardPosition < screenPosition) {
+                    setTimeout(() => {
+                        card.classList.add('animated');
+                    }, index * 150);
+                }
+            });
+        }
+        
+        // Initialize animations
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+        
+        // Floating animation for some elements
+        function floatAnimation() {
+            const floatElements = document.querySelectorAll('.service-icon, .tip-icon');
+            
+            floatElements.forEach(element => {
+                element.style.animation = 'float 3s ease-in-out infinite';
+            });
+        }
+        
+        floatAnimation();
+        
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        // Check for saved theme preference
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+    </script>
+</body>
+</html>
